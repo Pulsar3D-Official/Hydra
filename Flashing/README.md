@@ -11,8 +11,9 @@ First of all, make sure CAN is already set up on your printer. You can follow Es
 7. On the Hydra, hold the BOOT button. While holding it press and release the RESET button, then release the BOOT button. 
 8. Use lsusb to verify that your Hydra is in DFU mode. 
 9. Flash Katapult using ```sudo dfu-util -R -a 0 -s 0x08000000:mass-erase:force:leave -D ~/katapult/out/katapult.bin -d 0483:df11```. 
-10. Use ```~/klippy-env/bin/python ~/klipper/scripts/canbus_query.py can0``` to find Hydra's UUID. It'll say Canboot next to it. 
-11. Flash Klipper using  ```cd ~/katapult/scripts && python3 flashtool.py -i can0 -f ~/klipper/out/klipper.bin -u <uuid>```, replace <uuid> with your Hydra's UUID.
+10. Disconnect Hydra from USB, and connect to CAN and power, and power it on.
+11. Use ```~/klippy-env/bin/python ~/klipper/scripts/canbus_query.py can0``` to find Hydra's UUID. It'll say Canboot next to it. 
+12. Flash Klipper using  ```cd ~/katapult/scripts && python3 flashtool.py -i can0 -f ~/klipper/out/klipper.bin -u <uuid>```, replace <uuid> with your Hydra's UUID.
 
 ## USB with Katapult
 
