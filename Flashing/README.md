@@ -15,6 +15,9 @@ First of all, make sure CAN is already set up on your printer. You can follow Es
 11. Use ```~/klippy-env/bin/python ~/klipper/scripts/canbus_query.py can0``` to find Hydra's UUID. It'll say Canboot next to it. 
 12. Flash Klipper using  ```cd ~/katapult/scripts && python3 flashtool.py -i can0 -f ~/klipper/out/klipper.bin -u <uuid>```, replace <uuid> with your Hydra's UUID.
 
+![Katapult CAN](Katapult_CAN.png)
+![Klipper CAN_Katapult](Klipper_CAN_Katapult.png)
+
 ## USB with Katapult
 
 1. Connect the Hydra to USB on your Pi.
@@ -29,9 +32,14 @@ First of all, make sure CAN is already set up on your printer. You can follow Es
 10. Go to the Klipper directory ```cd ~/klipper```.
 11. Flash Klipper using  ```make flash FLASH_DEVICE=/dev/serial/by-id/usb-katapult_your_board_id```, replace your_board_id with your Hydra's serial ID.
 
+![Katapult USB](Katapult_USB.png)
+![Klipper USB Katapult](Klipper_USB_Katapult.png)
+
 ## USB without Katapult
 
 1. cd ~/klipper
 2. make clean
 3. make menuconfig, use the Klipper settings below
 4. make flash FLASH_DEVICE=0483:df11
+
+![Klipper USB](Klipper_USB.png)
